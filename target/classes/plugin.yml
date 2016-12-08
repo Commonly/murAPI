@@ -1,9 +1,11 @@
 name: murAPI
 main: me.jdog.murapi.MurAPI
-version: 1.0
+version: 1.2
+loadbefore: [MSG,Punish]
 commands:
   murapi:
     usage: /<command>
     description: plugin info
     permission: murapi.murapi
     permission-message: §cNo permission.
+    aliases: [mur]
