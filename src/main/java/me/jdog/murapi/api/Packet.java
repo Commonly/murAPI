@@ -8,6 +8,11 @@ import org.bukkit.entity.Player;
  */
 public class Packet {
 
+    /**
+     *
+     * @param player The player to send the packet to.
+     * @param packet The packet to send.
+     */
     public static void sendPacket(Player player, Object packet) {
         try {
             Object handle = player.getClass().getMethod("getHandle").invoke(player);
@@ -18,6 +23,11 @@ public class Packet {
         }
     }
 
+    /**
+     *
+     * @param name Class name.
+     * @return The class.
+     */
     public static Class<?> getNMSClass(String name) {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         try {

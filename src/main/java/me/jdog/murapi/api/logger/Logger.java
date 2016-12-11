@@ -38,6 +38,11 @@ public class Logger {
         System.out.println("[" + format.format(time) + " WARNING]: " + text);
     }
 
+    /**
+     *
+     * @param logType Level of log type.
+     * @param text The text to log.
+     */
     public void log(LogType logType, String text) {
         if(logType == LogType.INFO)
             info(text);

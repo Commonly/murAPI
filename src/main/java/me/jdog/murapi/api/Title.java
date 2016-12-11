@@ -9,6 +9,14 @@ import java.lang.reflect.Constructor;
  */
 public class Title {
 
+    /**
+     *
+     * @param player The player to send the title to.
+     * @param text The text of the title.
+     * @param fadeI Fade in.
+     * @param time The time it should stay.
+     * @param fadeO Fade out.
+     */
     public static void sendTitle(Player player, String text, int fadeI, int time, int fadeO) {
         try {
             Object e = Packet.getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("TITLE").get(null);
@@ -21,6 +29,14 @@ public class Title {
         }
     }
 
+    /**
+     *
+     * @param player The player to send the subtitle to.
+     * @param text The text of the subtitle.
+     * @param fadeI Fade in.
+     * @param time The time it should stay.
+     * @param fadeO Fade out.
+     */
     public static void sendSubtitle(Player player, String text, int fadeI, int time, int fadeO) {
         try {
             Object e = Packet.getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("SUBTITLE").get(null);

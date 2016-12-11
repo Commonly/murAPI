@@ -19,10 +19,20 @@ public class GuiManager implements Listener {
 
     }
 
+    /**
+     *
+     * @param id The ID of the GUI.
+     * @return The GUI that has the ID specified.
+     */
     public static GuiBase getGui(int id) {
         return guiBaseMap.get(id);
     }
 
+    /**
+     *
+     * @param id The ID of the GUI.
+     * @param guiBase The GUI.
+     */
     public static void registerGui(int id, GuiBase guiBase) {
         guiBaseMap.put(id, guiBase);
     }

@@ -1,5 +1,6 @@
 package me.jdog.murapi.api.cmd;
 
+import me.jdog.murapi.MurAPI;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,10 +18,22 @@ public class CMDManager implements CommandExecutor {
 
     }
 
+
+    /**
+     *
+     * @param id The ID of the command.
+     * @return Return the command that holds the specified ID
+     */
     public static CMD getCMD(int id) {
         return cmdBaseMap.get(id);
     }
 
+
+    /**
+     *
+     * @param id ID to get that command.
+     * @param cmd The command.
+     */
     public static void registerCommand(int id, CMD cmd) {
         cmdBaseMap.put(id, cmd);
     }

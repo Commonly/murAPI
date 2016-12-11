@@ -27,6 +27,11 @@ public class ServerUtils {
     private String server = Bukkit.getServer().getIp();
     private int port = Bukkit.getServer().getPort();
 
+    /**
+     *
+     * @param type The connection you want to get.
+     * @return Connection type.
+     */
     public String getDataType(ConnectionType type) {
         try {
             Socket socket = new Socket();
