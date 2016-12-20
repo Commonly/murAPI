@@ -1,9 +1,6 @@
 package me.jdog.murapi.api;
 
-import me.jdog.murapi.MurAPI;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
 
 /**

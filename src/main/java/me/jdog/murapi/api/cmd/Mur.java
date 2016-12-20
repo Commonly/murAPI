@@ -17,7 +17,31 @@ public class Mur extends CMD {
 
     @Override
     public boolean execute(CommandSender sender, Command command, String label, String[] args) {
-        sender.sendMessage(Color.addColor("&c[mur] &amurAPI version: " + Utilities.getInstance().getVersion(MurAPI.getInstance()) + " &dBukkit/Spigot version: " + MurAPI.sv_version));
+        if(args.length == 0 || args.length == 1) {
+            sender.sendMessage(Color.addColor("&c[mur] &amurAPI version: " + Utilities.getInstance().getVersion(MurAPI.getInstance()) + " &dBukkit/Spigot version: " + MurAPI.sv_version));
+            return true;
+        }
+        if(args[0].equalsIgnoreCase("debug")) {
+            if(args[1].equalsIgnoreCase("true")) {
+                MurAPI.getInstance().config.set("debug", true);
+                sender.sendMessage(Color.addColor("&cDebug mode: &7TRUE &fYou will now receive debug alerts from murAPI"));
+                return true;
+            } else if (args[1].equalsIgnoreCase("false")) {
+                MurAPI.getInstance().config.set("debug", false);
+                sender.sendMessage(Color.addColor("&cDebug mode: &7FALSE &fYou will no longer receive debug alerts from murAPI"));
+                return true;
+            } else if (args[1].equalsIgnoreCase("status")) {
+                if(MurAPI.getInstance().config.getBoolean("debug")) {
+                    sender.sendMessage(Color.addColor("&cDebug status: &7TRUE &fYou will get console alerts from murAPI"));
+                } else if (!MurAPI.getInstance().config.getBoolean("debug")) {
+                    sender.sendMessage(Color.addColor("&cDebug status: &7FALSE &fYou will not get console alerts from murAPI"));
+                }
+                return true;
+            } else {
+                sender.sendMessage(Color.addColor("&cInvalid usage of 'debug' &7Correct usage: &f/murapi debug [true/false/status]"));
+                return true;
+            }
+        }
         return false;
     }
 }

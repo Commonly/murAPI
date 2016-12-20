@@ -14,25 +14,25 @@ public class Logger {
         return instance;
     }
 
-    private void info(String text) {
+    private static void info(String text) {
         Date time = new Date();
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         System.out.println("[" + format.format(time) + " INFO]: " + text);
     }
 
-    private void severe(String text) {
+    private static void severe(String text) {
         Date time = new Date();
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         System.out.println("[" + format.format(time) + " SEVERE]: " + text);
     }
 
-    private void error(String text) {
+    private static void error(String text) {
         Date time = new Date();
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         System.out.println("[" + format.format(time) + " ERROR]: " + text);
     }
 
-    private void warn(String text) {
+    private static void warn(String text) {
         Date time = new Date();
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         System.out.println("[" + format.format(time) + " WARNING]: " + text);
@@ -43,7 +43,7 @@ public class Logger {
      * @param logType Level of log type.
      * @param text The text to log.
      */
-    public void log(LogType logType, String text) {
+    public static void log(LogType logType, String text) {
         if(logType == LogType.INFO)
             info(text);
         if(logType == LogType.SEVERE)

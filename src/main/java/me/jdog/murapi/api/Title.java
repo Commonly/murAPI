@@ -49,4 +49,24 @@ public class Title {
         }
     }
 
+    /**
+     *
+     * @param player The player to send the title and subtitle to.
+     * @param titleText The text of the title.
+     * @param subtitleText The text of the subtitle.
+     * @param fadeI Fade in.
+     * @param time The time it should stay.
+     * @param fadeO Fade out.
+     */
+    public static void sendTitle(Player player, String titleText, String subtitleText, int fadeI, int time, int fadeO) {
+        if(titleText != null && subtitleText != null) {
+            sendTitle(player, titleText, fadeI, time, fadeO);
+            sendSubtitle(player, subtitleText, fadeI, time, fadeO);
+        } else if(titleText == null && subtitleText != null) {
+            sendSubtitle(player, subtitleText, fadeI, time, fadeO);
+        } else if(titleText != null && subtitleText == null) {
+            sendTitle(player, titleText, fadeI, time, fadeO);
+        }
+    }
+
 }

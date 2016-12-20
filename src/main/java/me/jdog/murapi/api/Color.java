@@ -20,7 +20,7 @@ public class Color {
      *
      * @param text The line of the config to add color.
      * @param plugin The plugins main class.
-     * @return
+     * @return The line from config with color.
      */
     public static String addColor(String text, Plugin plugin) {
         return ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString(text));
