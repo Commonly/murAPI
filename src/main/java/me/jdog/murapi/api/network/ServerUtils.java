@@ -1,3 +1,13 @@
+/*
+ * Copyright (c) 2016
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 package me.jdog.murapi.api.network;
 
 import me.jdog.murapi.api.logger.LogType;
@@ -18,17 +28,17 @@ import java.nio.charset.Charset;
  */
 public class ServerUtils {
     private static ServerUtils instance = new ServerUtils();
+    private String server = Bukkit.getServer().getIp();
+    private int port = Bukkit.getServer().getPort();
+
     private ServerUtils() {
     }
+
     public static ServerUtils getInstance() {
         return instance;
     }
 
-    private String server = Bukkit.getServer().getIp();
-    private int port = Bukkit.getServer().getPort();
-
     /**
-     *
      * @param type The connection you want to get.
      * @return Connection type.
      */
@@ -48,24 +58,24 @@ public class ServerUtils {
             dataOutputStream.write(new byte[]{(byte) (0xFE), (byte) 0x01});
             int packetID = inputStream.read();
             int length = inputStreamReader.read();
-            if(packetID == -1)
+            if (packetID == -1)
                 Logger.getInstance().log(LogType.SEVERE, "End of stream");
             if (packetID != 0xFF)
                 Logger.getInstance().log(LogType.SEVERE, "Invalid ID!" + packetID);
-            if(length == -1)
+            if (length == -1)
                 Logger.getInstance().log(LogType.SEVERE, "End of stream");
-            if(length == 0)
+            if (length == 0)
                 Logger.getInstance().log(LogType.SEVERE, "Invalid length");
             char[] chars = new char[length];
-            if(inputStreamReader.read(chars, 0, length) != length)
+            if (inputStreamReader.read(chars, 0, length) != length)
                 Logger.getInstance().log(LogType.SEVERE, "End of stream");
             String string = new String(chars);
             String[] data = string.split("\0");
-            if(type == ConnectionType.SV_ONLINE)
+            if (type == ConnectionType.SV_ONLINE)
                 return Integer.parseInt(data[4]) + "/" + Integer.parseInt(data[5]);
-            if(type == ConnectionType.SV_MOTD)
+            if (type == ConnectionType.SV_MOTD)
                 return data[3];
-            if(type == ConnectionType.SV_VERSION)
+            if (type == ConnectionType.SV_VERSION)
                 return data[2];
         } catch (Exception e) {
             return null;
