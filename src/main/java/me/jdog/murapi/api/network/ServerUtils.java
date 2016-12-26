@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2016 Josh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -31,9 +31,6 @@ public class ServerUtils {
     private String server = Bukkit.getServer().getIp();
     private int port = Bukkit.getServer().getPort();
 
-    private ServerUtils() {
-    }
-
     public static ServerUtils getInstance() {
         return instance;
     }
@@ -59,16 +56,16 @@ public class ServerUtils {
             int packetID = inputStream.read();
             int length = inputStreamReader.read();
             if (packetID == -1)
-                Logger.getInstance().log(LogType.SEVERE, "End of stream");
+                Logger.getLogger().log(LogType.SEVERE, "End of stream");
             if (packetID != 0xFF)
-                Logger.getInstance().log(LogType.SEVERE, "Invalid ID!" + packetID);
+                Logger.getLogger().log(LogType.SEVERE, "Invalid ID!" + packetID);
             if (length == -1)
-                Logger.getInstance().log(LogType.SEVERE, "End of stream");
+                Logger.getLogger().log(LogType.SEVERE, "End of stream");
             if (length == 0)
-                Logger.getInstance().log(LogType.SEVERE, "Invalid length");
+                Logger.getLogger().log(LogType.SEVERE, "Invalid length");
             char[] chars = new char[length];
             if (inputStreamReader.read(chars, 0, length) != length)
-                Logger.getInstance().log(LogType.SEVERE, "End of stream");
+                Logger.getLogger().log(LogType.SEVERE, "End of stream");
             String string = new String(chars);
             String[] data = string.split("\0");
             if (type == ConnectionType.SV_ONLINE)

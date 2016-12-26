@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2016 Josh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -10,6 +10,7 @@
 
 package me.jdog.murapi.api;
 
+import me.jdog.murapi.MurAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 
@@ -18,19 +19,29 @@ import org.bukkit.plugin.Plugin;
  */
 public class Color {
     /**
-     * @param text The text to add color.
+     * @param input The text to add color.
      * @return Returns the text with color.
      */
-    public static String addColor(String text) {
-        return ChatColor.translateAlternateColorCodes('&', text);
+    public static String addColor(String input) {
+        return ChatColor.translateAlternateColorCodes('&', input);
     }
 
     /**
-     * @param text   The line of the config to add color.
+     * @param input   The line of the config to add color.
      * @param plugin The plugins main class.
      * @return The line from config with color.
      */
-    public static String addColor(String text, Plugin plugin) {
-        return ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString(text));
+    public static String addColor(String input, Plugin plugin) {
+        return addColor(plugin.getConfig().getString(input));
     }
+
+    /**
+     *
+     * @param input The string to strip.
+     * @return The string w/o color.
+     */
+    public static String strip(String input) {
+        return ChatColor.stripColor(input);
+    }
+
 }

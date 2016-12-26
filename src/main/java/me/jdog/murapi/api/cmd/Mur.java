@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2016 Josh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -31,6 +31,7 @@ public class Mur extends CMD {
             sender.sendMessage(Color.addColor("&c[mur] &amurAPI version: " + Utilities.getInstance().getVersion(MurAPI.getInstance()) + " &dBukkit/Spigot version: " + MurAPI.sv_version));
             return true;
         }
+
         if (args[0].equalsIgnoreCase("debug")) {
             if (args[1].equalsIgnoreCase("true")) {
                 MurAPI.getInstance().config.set("debug", true);

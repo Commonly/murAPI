@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2016 Josh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -18,6 +18,7 @@ import me.jdog.murapi.api.gui.GuiManager;
 import me.jdog.murapi.api.logger.LogType;
 import me.jdog.murapi.api.logger.Logger;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -31,23 +32,38 @@ public class MurAPI extends JavaPlugin {
      * An instance of the class MurAPI.
      */
     private static MurAPI instance;
-    public Config config = new Config(this, "config.yml");
-    private Logger logger = Logger.getInstance();
+
+    public Config config;
 
     public static MurAPI getInstance() {
         return instance;
     }
 
+
+    @Deprecated
+    public static MurAPI getAPI() {
+        Plugin mur = Bukkit.getServer().getPluginManager().getPlugin("murAPI");
+        if(mur instanceof MurAPI)
+            return (MurAPI) mur;
+        else
+            return null;
+    }
+
+    private Logger logger = Logger.getLogger();
+
     @Override
     public void onEnable() {
         instance = this;
 
-        config.create();
+        config = new Config(this, "config.yml");
         config.addDefault("debug", true);
+
+        debug("onEnable called");
+
         if (config.getBoolean("debug")) {
-            getLogger().log(Level.CONFIG, "Debug mode: TRUE");
+            getLogger().log(Level.INFO, "Debug mode: TRUE");
         } else if (!config.getBoolean("debug")) {
-            getLogger().log(Level.CONFIG, "Debug mode: FALSE");
+            getLogger().log(Level.INFO, "Debug mode: FALSE");
         }
 
         Actionbar.enable();
@@ -55,11 +71,18 @@ public class MurAPI extends JavaPlugin {
         getCommand("murapi").setExecutor(new CMDManager());
         getServer().getPluginManager().registerEvents(new GuiManager(), this);
         logger.log(LogType.INFO, "murAPI has been enabled!");
+
     }
 
     @Override
     public void onDisable() {
         instance = null;
+        debug("onDisable called");
     }
 
+    public void debug(String text) {
+        if(config.getBoolean("debug")) {
+            logger.log(LogType.DEBUG, text);
+        }
+    }
 }
