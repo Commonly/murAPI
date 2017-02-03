@@ -8,38 +8,33 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.jdog.murapi.api;
+package me.jdog.murapi.api.file;
 
-import org.bukkit.ChatColor;
-import org.bukkit.plugin.Plugin;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
 
 /**
- * Created by Muricans on 11/19/16.
+ * Created by Muricans on 12/27/16.
  */
-public class Color {
-    /**
-     * @param input The text to add color.
-     * @return Returns the text with color.
-     */
-    public static String addColor(String input) {
-        return ChatColor.translateAlternateColorCodes('&', input);
-    }
-
-    /**
-     * @param input  The line of the config to add color.
-     * @param plugin The plugins main class.
-     * @return The line from config with color.
-     */
-    public static String addColor(String input, Plugin plugin) {
-        return addColor(plugin.getConfig().getString(input));
-    }
-
-    /**
-     * @param input The string to strip.
-     * @return The string w/o color.
-     */
-    public static String strip(String input) {
-        return ChatColor.stripColor(input);
+public class FileUtil {
+    public static void downloadFile(String urlToDownload, File locationToStore) {
+        try {
+            URL url = new URL(urlToDownload);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(url.openStream());
+            FileOutputStream fileOutputStream = new FileOutputStream(locationToStore);
+            byte[] buffer = new byte[1024];
+            int count = 0;
+            while ((count = bufferedInputStream.read(buffer, 0, 1024)) != -1) {
+                fileOutputStream.write(buffer, 0, count);
+            }
+            fileOutputStream.close();
+            bufferedInputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

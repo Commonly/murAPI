@@ -16,7 +16,7 @@
 
     <groupId>me.jdog.murapi</groupId>
     <artifactId>mur-api</artifactId>
-    <version>1.4-pre</version>
+    <version>1.5-pre</version>
     <packaging>jar</packaging>
     <build>
         <finalName>murAPI</finalName>

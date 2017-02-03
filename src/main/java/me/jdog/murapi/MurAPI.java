@@ -17,6 +17,7 @@ import me.jdog.murapi.api.config.Config;
 import me.jdog.murapi.api.gui.GuiManager;
 import me.jdog.murapi.api.logger.LogType;
 import me.jdog.murapi.api.logger.Logger;
+import me.jdog.murapi.events.ConfigCreateEventExample;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,29 +35,30 @@ public class MurAPI extends JavaPlugin {
     private static MurAPI instance;
 
     public Config config;
+    private Logger logger = Logger.getLogger();
 
     public static MurAPI getInstance() {
         return instance;
     }
 
-
     @Deprecated
     public static MurAPI getAPI() {
         Plugin mur = Bukkit.getServer().getPluginManager().getPlugin("murAPI");
-        if(mur instanceof MurAPI)
+        if (mur instanceof MurAPI)
             return (MurAPI) mur;
         else
             return null;
     }
 
-    private Logger logger = Logger.getLogger();
-
     @Override
     public void onEnable() {
         instance = this;
-
+        Bukkit.getServer().getPluginManager().registerEvents(new ConfigCreateEventExample(), this);
         config = new Config(this, "config.yml");
-        config.addDefault("debug", true);
+        config.create();
+        config.options().copyDefaults(true);
+        config.loadFromJar();
+        config.save();
 
         debug("onEnable called");
 
@@ -67,7 +69,7 @@ public class MurAPI extends JavaPlugin {
         }
 
         Actionbar.enable();
-        CMDManager.registerCommand(0, new Mur());
+        CMDManager.registerCommand(new Mur());
         getCommand("murapi").setExecutor(new CMDManager());
         getServer().getPluginManager().registerEvents(new GuiManager(), this);
         logger.log(LogType.INFO, "murAPI has been enabled!");
@@ -81,7 +83,7 @@ public class MurAPI extends JavaPlugin {
     }
 
     public void debug(String text) {
-        if(config.getBoolean("debug")) {
+        if (config.getBoolean("debug")) {
             logger.log(LogType.DEBUG, text);
         }
     }
