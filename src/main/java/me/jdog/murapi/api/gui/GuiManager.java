@@ -22,7 +22,7 @@ import java.util.Map;
  * Created by Muricans on 11/20/16.
  */
 public class GuiManager implements Listener {
-    public static Map<Integer, GuiBase> guiBaseMap = new HashMap<>();
+    private static Map<String, GuiBase> guiBaseMap = new HashMap<>();
 
     public GuiManager() {
 
@@ -32,15 +32,15 @@ public class GuiManager implements Listener {
      * @param id The ID of the GUI.
      * @return The GUI that has the ID specified.
      */
-    public static GuiBase getGui(int id) {
+    public static GuiBase getGui(String id) {
         return guiBaseMap.get(id);
     }
 
     /**
-     * @param id      The ID of the GUI.
+     * @param id The ID of the GUI.
      * @param guiBase The GUI.
      */
-    public static void registerGui(int id, GuiBase guiBase) {
+    public static void registerGui(String id, GuiBase guiBase) {
         guiBaseMap.put(id, guiBase);
     }
 

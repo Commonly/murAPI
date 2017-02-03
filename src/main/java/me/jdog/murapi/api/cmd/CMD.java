@@ -18,7 +18,6 @@ import org.bukkit.command.CommandSender;
  */
 public abstract class CMD {
     private String name;
-
     /**
      * @param name The commands name.
      */

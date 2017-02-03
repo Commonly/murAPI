@@ -10,6 +10,8 @@
 
 package me.jdog.murapi.api.logger;
 
+import me.jdog.murapi.exceptions.InvalidCharException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,8 +20,10 @@ import java.util.Date;
  */
 public class Logger {
     private static Logger logger = new Logger();
+
     private Logger() {
     }
+
     public static Logger getLogger() {
         return logger;
     }
@@ -69,8 +73,12 @@ public class Logger {
             warn(text);
         if (logType == LogType.DEBUG)
             debug(text);
-        if (logType == null) {
-            warn("Cannot be null!");
+        try {
+            if (logType == null) {
+                throw new InvalidCharException();
+            }
+        } catch (InvalidCharException e) {
+            e.printStackTrace();
         }
     }
 }

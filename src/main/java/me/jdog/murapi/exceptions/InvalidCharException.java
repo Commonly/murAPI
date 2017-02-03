@@ -8,38 +8,17 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.jdog.murapi.api;
-
-import org.bukkit.ChatColor;
-import org.bukkit.plugin.Plugin;
+package me.jdog.murapi.exceptions;
 
 /**
- * Created by Muricans on 11/19/16.
+ * Created by Muricans on 12/26/16.
  */
-public class Color {
-    /**
-     * @param input The text to add color.
-     * @return Returns the text with color.
-     */
-    public static String addColor(String input) {
-        return ChatColor.translateAlternateColorCodes('&', input);
+public class InvalidCharException extends Exception {
+    public InvalidCharException() {
+        super();
     }
 
-    /**
-     * @param input  The line of the config to add color.
-     * @param plugin The plugins main class.
-     * @return The line from config with color.
-     */
-    public static String addColor(String input, Plugin plugin) {
-        return addColor(plugin.getConfig().getString(input));
+    public InvalidCharException(Throwable throwable) {
+        super(throwable);
     }
-
-    /**
-     * @param input The string to strip.
-     * @return The string w/o color.
-     */
-    public static String strip(String input) {
-        return ChatColor.stripColor(input);
-    }
-
 }
