@@ -5,7 +5,7 @@ Will be an API I use for plugins from now on.
 <repositories>
         <repository>
             <id>murapi-repo</id>
-            <url>https//commonly.github.io/repo</url>
+            <url>https://commonly.github.io/repo</url>
         </repository>
     </repositories>
     <dependencies>
