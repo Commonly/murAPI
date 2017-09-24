@@ -1,19 +1,10 @@
-/*
- * Copyright (c) 2016 Josh
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
 package me.jdog.murapi.api.config;
 
 import me.jdog.murapi.events.ConfigCreateEvent;
 import me.jdog.murapi.exceptions.InvalidFileException;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationOptions;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -30,17 +21,18 @@ import java.util.Map;
 
 /**
  * Created by Muricans on 12/17/16.
+ * <p>
+ * Feel free to copy class
  *
  * @since 1.3-pre
  */
 
 public class Config {
+    public String configVersion = "0.3.0";
     private Plugin p;
     private File file;
     private FileConfiguration fileConfig;
     private String name;
-    public String configVersion = "0.0.3";
-
     @Deprecated
     private Map<FileConfiguration, File> files = new HashMap<>();
 
@@ -189,7 +181,8 @@ public class Config {
     }
 
     public ConfigurationOptions options() {
-        if(!file.exists()) {
+        OfflinePlayer player = Bukkit.getOfflinePlayer("x");
+        if (!file.exists()) {
             create();
         }
         return fileConfig.options();

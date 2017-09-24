@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Josh
+ * Copyright (c) 2017 Josh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -16,28 +16,11 @@ import org.bukkit.command.CommandSender;
 /**
  * Created by Muricans on 12/7/16.
  */
-public abstract class CMD {
-    private String name;
-    /**
-     * @param name The commands name.
-     */
-    public CMD(String name) {
-        this.name = name;
-    }
-
+public interface CMD {
     /**
      * @return Return the name of the command.
      */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param name The commands name.
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+    String getName();
 
     /**
      * @param sender  The sender of the command.
@@ -46,6 +29,6 @@ public abstract class CMD {
      * @param args    The commands args.
      * @return True or false
      */
-    public abstract boolean execute(CommandSender sender, Command command, String label, String[] args);
+    boolean execute(CommandSender sender, Command command, String label, String[] args);
 
 }

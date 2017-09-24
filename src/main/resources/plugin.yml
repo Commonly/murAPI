@@ -1,6 +1,6 @@
 name: murAPI
 main: me.jdog.murapi.MurAPI
-version: 1.5
+version: 1.0.0
 loadbefore: [MSG,Punish,Report]
 commands:
   murapi:

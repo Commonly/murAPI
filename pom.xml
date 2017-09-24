@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2016 Josh
+  ~ Copyright (c) 2017 Josh
   ~
   ~ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
   ~
@@ -16,7 +16,7 @@
 
     <groupId>me.jdog.murapi</groupId>
     <artifactId>mur-api</artifactId>
-    <version>1.5-pre</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
     <build>
         <finalName>murAPI</finalName>

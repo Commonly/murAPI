@@ -1,8 +1,18 @@
+<!--
+  ~ Copyright (c) 2017 Josh
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  -->
+
 <html>
 <head>
-<title>murAPI.iml</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
+    <title>murAPI.iml</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
 .ln { color: #999999; font-weight: normal; font-style: normal; }
 .s0 { color: rgb(0,0,0); font-style: italic; }
 .s1 { color: rgb(0,85,255); font-weight: bold; }
@@ -10,41 +20,105 @@
 .s3 { color: rgb(101,138,186); font-weight: bold; }
 .s4 { color: rgb(0,0,0); }
 .s5 { color: rgb(0,0,128); font-weight: bold; }
-</style>
+
+    </style>
 </head>
 <BODY BGCOLOR="#ffffff">
-<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
-<TR><TD><CENTER>
-<FONT FACE="Arial, Helvetica" COLOR="#000000">
-murAPI.iml</FONT>
-</center></TD></TR></TABLE>
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0">
+    <TR>
+        <TD>
+            <CENTER>
+                <FONT FACE="Arial, Helvetica" COLOR="#000000">
+                    murAPI.iml</FONT>
+            </center>
+        </TD>
+    </TR>
+</TABLE>
 <pre>
-<span class="s0">&lt;?</span><span class="s1">xml version=</span><span class="s3">&quot;1.0&quot; </span><span class="s1">encoding=</span><span class="s3">&quot;UTF-8&quot;</span><span class="s0">?&gt;</span><span class="s4"> 
-</span><span class="s2">&lt;</span><span class="s5">module </span><span class="s1">org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=</span><span class="s3">&quot;true&quot; </span><span class="s1">type=</span><span class="s3">&quot;JAVA_MODULE&quot; </span><span class="s1">version=</span><span class="s3">&quot;4&quot;</span><span class="s2">&gt;</span><span class="s4"> 
-  </span><span class="s2">&lt;</span><span class="s5">component </span><span class="s1">name=</span><span class="s3">&quot;NewModuleRootManager&quot; </span><span class="s1">LANGUAGE_LEVEL=</span><span class="s3">&quot;JDK_1_7&quot; </span><span class="s1">inherit-compiler-output=</span><span class="s3">&quot;false&quot;</span><span class="s2">&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">output </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/target/classes&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">output-test </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/target/test-classes&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">content </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$&quot;</span><span class="s2">&gt;</span><span class="s4"> 
-      </span><span class="s2">&lt;</span><span class="s5">sourceFolder </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/src/main/java&quot; </span><span class="s1">isTestSource=</span><span class="s3">&quot;false&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-      </span><span class="s2">&lt;</span><span class="s5">sourceFolder </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/src/main/resources&quot; </span><span class="s1">type=</span><span class="s3">&quot;java-resource&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-      </span><span class="s2">&lt;</span><span class="s5">sourceFolder </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/src/test/java&quot; </span><span class="s1">isTestSource=</span><span class="s3">&quot;true&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-      </span><span class="s2">&lt;</span><span class="s5">excludeFolder </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/target&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
+<span class="s0">&lt;?</span><span class="s1">xml version=</span><span class="s3">&quot;1.0&quot; </span><span
+        class="s1">encoding=</span><span class="s3">&quot;UTF-8&quot;</span><span class="s0">?&gt;</span><span
+        class="s4">
+</span><span class="s2">&lt;</span><span class="s5">module </span><span class="s1">org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=</span><span
+        class="s3">&quot;true&quot; </span><span class="s1">type=</span><span class="s3">&quot;JAVA_MODULE&quot; </span><span
+        class="s1">version=</span><span class="s3">&quot;4&quot;</span><span class="s2">&gt;</span><span class="s4">
+  </span><span class="s2">&lt;</span><span class="s5">component </span><span class="s1">name=</span><span class="s3">&quot;NewModuleRootManager&quot; </span><span
+        class="s1">LANGUAGE_LEVEL=</span><span class="s3">&quot;JDK_1_7&quot; </span><span class="s1">inherit-compiler-output=</span><span
+        class="s3">&quot;false&quot;</span><span class="s2">&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">output </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/target/classes&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">output-test </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$/target/test-classes&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">content </span><span class="s1">url=</span><span class="s3">&quot;file://$MODULE_DIR$&quot;</span><span
+        class="s2">&gt;</span><span class="s4">
+      </span><span class="s2">&lt;</span><span class="s5">sourceFolder </span><span class="s1">url=</span><span
+        class="s3">&quot;file://$MODULE_DIR$/src/main/java&quot; </span><span class="s1">isTestSource=</span><span
+        class="s3">&quot;false&quot; </span><span class="s2">/&gt;</span><span class="s4">
+      </span><span class="s2">&lt;</span><span class="s5">sourceFolder </span><span class="s1">url=</span><span
+        class="s3">&quot;file://$MODULE_DIR$/src/main/resources&quot; </span><span class="s1">type=</span><span
+        class="s3">&quot;java-resource&quot; </span><span class="s2">/&gt;</span><span class="s4">
+      </span><span class="s2">&lt;</span><span class="s5">sourceFolder </span><span class="s1">url=</span><span
+        class="s3">&quot;file://$MODULE_DIR$/src/test/java&quot; </span><span class="s1">isTestSource=</span><span
+        class="s3">&quot;true&quot; </span><span class="s2">/&gt;</span><span class="s4">
+      </span><span class="s2">&lt;</span><span class="s5">excludeFolder </span><span class="s1">url=</span><span
+        class="s3">&quot;file://$MODULE_DIR$/target&quot; </span><span class="s2">/&gt;</span><span class="s4">
     </span><span class="s2">&lt;/</span><span class="s5">content</span><span class="s2">&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;inheritedJdk&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;sourceFolder&quot; </span><span class="s1">forTests=</span><span class="s3">&quot;false&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: org.spigotmc:spigot-api:1.11-R0.1-SNAPSHOT&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: commons-lang:commons-lang:2.6&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: com.googlecode.json-simple:json-simple:1.1.1&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: junit:junit:4.10&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: org.hamcrest:hamcrest-core:1.1&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: com.google.guava:guava:17.0&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: com.google.code.gson:gson:2.2.4&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: org.avaje:ebean:2.8.1&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: javax.persistence:persistence-api:1.0&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: org.yaml:snakeyaml:1.17&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: net.md-5:bungeecord-chat:1.10-SNAPSHOT&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: org.bukkit:bukkit:1.11-R0.1-SNAPSHOT&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
-    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span class="s1">name=</span><span class="s3">&quot;Maven: commons-io:commons-io:2.5&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4"> 
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;inheritedJdk&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;sourceFolder&quot; </span><span
+        class="s1">forTests=</span><span class="s3">&quot;false&quot; </span><span class="s2">/&gt;</span><span
+        class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: org.spigotmc:spigot-api:1.11-R0.1-SNAPSHOT&quot; </span><span
+        class="s1">level=</span><span class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span
+        class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: commons-lang:commons-lang:2.6&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: com.googlecode.json-simple:json-simple:1.1.1&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: junit:junit:4.10&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: org.hamcrest:hamcrest-core:1.1&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: com.google.guava:guava:17.0&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: com.google.code.gson:gson:2.2.4&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: org.avaje:ebean:2.8.1&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: javax.persistence:persistence-api:1.0&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: org.yaml:snakeyaml:1.17&quot; </span><span class="s1">level=</span><span class="s3">&quot;project&quot; </span><span
+        class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: net.md-5:bungeecord-chat:1.10-SNAPSHOT&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">scope=</span><span class="s3">&quot;PROVIDED&quot; </span><span class="s1">name=</span><span
+        class="s3">&quot;Maven: org.bukkit:bukkit:1.11-R0.1-SNAPSHOT&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
+    </span><span class="s2">&lt;</span><span class="s5">orderEntry </span><span class="s1">type=</span><span class="s3">&quot;library&quot; </span><span
+        class="s1">name=</span><span class="s3">&quot;Maven: commons-io:commons-io:2.5&quot; </span><span class="s1">level=</span><span
+        class="s3">&quot;project&quot; </span><span class="s2">/&gt;</span><span class="s4">
   </span><span class="s2">&lt;/</span><span class="s5">component</span><span class="s2">&gt;</span><span class="s4"> 
 </span><span class="s2">&lt;/</span><span class="s5">module</span><span class="s2">&gt;</span></pre>
 </body>

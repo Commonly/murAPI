@@ -8,21 +8,27 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.jdog.murapi.exceptions;
+package me.jdog.murapi.test;
+
+import me.jdog.murapi.api.config.Config;
+import org.bukkit.plugin.Plugin;
 
 /**
- * Created by Muricans on 12/26/16.
+ * Created by Muricans on 2/20/17.
  */
-public class InvalidFileException extends Exception {
-    public InvalidFileException() {
-        super();
+public class ConfigTest extends Config {
+
+    public ConfigTest(Plugin plugin, String name) {
+        super(plugin, name);
     }
 
-    public InvalidFileException(String message) {
-        super(message);
+    @Override
+    public void create() {
+        super.create();
     }
 
-    public InvalidFileException(Throwable throwable) {
-        super(throwable);
+    @Override
+    public void set(String path, Object value) {
+        super.set(path, value);
     }
 }

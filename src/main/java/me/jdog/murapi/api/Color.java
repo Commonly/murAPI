@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Josh
+ * Copyright (c) 2017 Josh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -10,7 +10,9 @@
 
 package me.jdog.murapi.api;
 
+import me.jdog.murapi.api.config.Config;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
 /**
@@ -30,8 +32,29 @@ public class Color {
      * @param plugin The plugins main class.
      * @return The line from config with color.
      */
+    @Deprecated
     public static String addColor(String input, Plugin plugin) {
         return addColor(plugin.getConfig().getString(input));
+    }
+
+    /**
+     *
+     * @param input The line of the config to add color.
+     * @param config The config.
+     * @return The line from config with color.
+     */
+    public static String addColor(String input, Config config) {
+        return addColor(config.getString(input));
+    }
+
+    /**
+     *
+     * @param input The line of the config to add color.
+     * @param fileConfiguration The config.
+     * @return The line from config with color.
+     */
+    public static String addColor(String input, FileConfiguration fileConfiguration) {
+        return addColor(fileConfiguration.getString(input));
     }
 
     /**

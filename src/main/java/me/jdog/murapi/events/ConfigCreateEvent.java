@@ -37,12 +37,12 @@ public class ConfigCreateEvent extends Event {
         return handlers;
     }
 
-    public void setCancelled(boolean b) {
-        this.cancelled = b;
-    }
-
     public boolean isCancelled() {
         return cancelled;
+    }
+
+    public void setCancelled(boolean b) {
+        this.cancelled = b;
     }
 
     public Plugin getPlugin() {
