@@ -7,7 +7,7 @@ Will be an API I use for plugins from now on.
             <id>murapi-repo</id>
             <url>https://commonly.github.io/repo</url>
         </repository>
-    </repositories>
+</repositories>
     <dependencies>
         <dependency>
             <groupId>me.jdog.murapi</groupId>
