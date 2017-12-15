@@ -23,9 +23,15 @@ import java.util.List;
  */
 public class CMDManager implements CommandExecutor {
     private static List<CMD> cmdBaseMap = new ArrayList<>();
+    
+    private JavaPlugin mainPl;
 
     public CMDManager() {
 
+    }
+    
+    public static void register(JavaPlugin plugin) {
+        this.mainPl = plugin;
     }
 
     /**
@@ -33,9 +39,15 @@ public class CMDManager implements CommandExecutor {
      * @param cmd The command.
      * @param plugin Class extending JavaPlugin.
      */
+    @Deprecated
     public static void registerCommand(CMD cmd, JavaPlugin plugin) {
         cmdBaseMap.add(cmd);
         plugin.getCommand(cmd.getName()).setExecutor(new CMDManager());
+    }
+    
+    public static void registerCommand(CMD cmd) {
+        cmdBaseMap.add(cmd);
+        mainPl.getCommand(cmd.getName()).setExecutor(new CMDManager());
     }
 
     @Override
