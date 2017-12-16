@@ -23,9 +23,28 @@ import java.util.List;
  */
 public class CMDManager implements CommandExecutor {
     private static List<CMD> cmdBaseMap = new ArrayList<>();
+    private static JavaPlugin mainPl;
 
     public CMDManager() {
 
+    }
+
+    /**
+     * Side notes: For this to work in your onEnable method make sure you do CMDManager().registerMain(this);
+     * @param plugin The main class of your plugin.
+     */
+    public static void registerMain(JavaPlugin plugin) {
+        mainPl = plugin;
+    }
+
+    /**
+     * Side notes: You no longer need to do mainclass.getCommand(cmdName).setExecutor(new CMDManager());
+     * You also don't need the plugin if you have registered it.
+     * @param cmd The command.
+     */
+    public static void registerCommand(CMD cmd) {
+        cmdBaseMap.add(cmd);
+        mainPl.getCommand(cmd.getName()).setExecutor(new CMDManager());
     }
 
     /**
@@ -33,6 +52,7 @@ public class CMDManager implements CommandExecutor {
      * @param cmd The command.
      * @param plugin Class extending JavaPlugin.
      */
+    @Deprecated
     public static void registerCommand(CMD cmd, JavaPlugin plugin) {
         cmdBaseMap.add(cmd);
         plugin.getCommand(cmd.getName()).setExecutor(new CMDManager());

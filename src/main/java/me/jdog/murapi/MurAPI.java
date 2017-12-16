@@ -69,7 +69,8 @@ public class MurAPI extends JavaPlugin {
         }
 
         Actionbar.enable();
-        CMDManager.registerCommand(new Mur(), this);
+        CMDManager.registerMain(this);
+        CMDManager.registerCommand(new Mur());
         getServer().getPluginManager().registerEvents(new GuiManager(), this);
         logger.log(LogType.INFO, "murAPI has been enabled!");
 
